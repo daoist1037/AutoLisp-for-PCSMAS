@@ -22,7 +22,7 @@
         (if (= (cdr blockName) "S311 Right Direction Pipe")
           (setq angFlag PI)
           (setq angFlag 0)
-        )'
+        )
         (if (= (cdr blockName) "PIPE WITHOUT ARROW")
           (setq angFlag -1)
         )
@@ -57,7 +57,7 @@
           (progn
             (setq tempVla (vlax-ename->vla-object temp))
             (setq attlist (vlax-safearray->list
-                            (vlax-variant-value (vla-getattributes tempvla))
+                            (vlax-variant-value (vla-getattributes tempVla))
                           )
             )
             (setq ent (nth 0 attlist))
@@ -92,7 +92,7 @@
 
 (defun pipeRead (temp / tempVla attlist aN mm strlist ent enttext)
   (setq tempVla (vlax-ename->vla-object temp))
-  (setq attlist (vlax-safearray->list (vlax-variant-value (vla-getattributes tempvla))))
+  (setq attlist (vlax-safearray->list (vlax-variant-value (vla-getattributes tempVla))))
   (setq aN (length attlist))
   (setq mm 0)
   (setq strlist "")
